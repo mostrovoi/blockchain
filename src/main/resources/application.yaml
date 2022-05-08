@@ -1,0 +1,4 @@
+tcp:
+  server:
+    port: 20000
+    name: blockchain1
