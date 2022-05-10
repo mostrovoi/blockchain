@@ -9,11 +9,11 @@ import com.blockchain.tcpserver.domain.ServerResolver
 import org.springframework.stereotype.Service
 
 @Service
-class UseCaseResolver constructor(connectionResolver: ConnectionResolver, machineResolver: ServerResolver) {
+class UseCaseResolver constructor(connectionResolver: ConnectionResolver, serverResolver: ServerResolver) {
     enum class ValidCommands {
         WHERE, WHO, WHY
     }
-    private val whereCommandUseCase = WhereCommandUseCase(machineResolver)
+    private val whereCommandUseCase = WhereCommandUseCase(serverResolver)
     private val whoCommandUseCase = WhoCommandUseCase(connectionResolver)
     private val whyCommandUseCase = WhyCommandUseCase()
     private val unexpectedCommandUseCase = UnexpectedCommandUseCase()
