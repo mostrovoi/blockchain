@@ -57,7 +57,7 @@ Additionally to the health endpoint, we should have dashboards covering latency,
 
 - Is it ok that global unique ID is bound to the instance? A restart of the server currently provides a different ID
 - Do we want our solution to be strong consistent or high available? What is the eviction time acceptable in case of A?
-
+- How long do we want to keep the connections opened?
 
 
 
