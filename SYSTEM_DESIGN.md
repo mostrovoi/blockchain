@@ -1,4 +1,4 @@
-#Blockchain TCP Server (System design)
+# Blockchain TCP Server (System design)
 
 When designing a high available solution with distributed systems we have to acknowledge the fact 
 that partition tolerance is something that we should face so we can only either achieve Consistency or Availability.
