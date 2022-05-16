@@ -1,7 +1,9 @@
 package com.blockchain.tcpserver.infrastructure
 
 import com.blockchain.tcpserver.domain.ServerResolver
+import com.blockchain.tcpserver.infrastructure.config.TcpServerConfig
 import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import java.util.*
 
@@ -9,10 +11,10 @@ import java.util.*
 class InfraServerResolver : ServerResolver {
     private val machineId = UUID.randomUUID().toString()
 
-    @Autowired
-    private lateinit var tcpServerConfig : TcpServerConfig
+    @Value("\${tcp.server.name}")
+    private val serverName = ""
 
     override fun getServerName(): String {
-        return tcpServerConfig.serverName + machineId
+        return serverName + machineId
     }
 }

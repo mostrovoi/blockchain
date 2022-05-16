@@ -1,4 +1,4 @@
-package com.blockchain.tcpserver.infrastructure
+package com.blockchain.tcpserver.infrastructure.config
 
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
@@ -13,9 +13,6 @@ import org.springframework.messaging.MessageChannel
 class TcpServerConfig {
     @Value("\${tcp.server.port}")
     private val port = 0
-
-    @Value("\${tcp.server.name}")
-    val serverName = ""
 
     @Bean
     fun serverConnectionFactory(): AbstractServerConnectionFactory {

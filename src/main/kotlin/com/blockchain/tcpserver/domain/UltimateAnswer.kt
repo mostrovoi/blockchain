@@ -1,7 +1,7 @@
 package com.blockchain.tcpserver.domain
 
 class UltimateAnswer {
-    fun get() : String {
-        return "42"
+    fun get() : Int {
+        return 42
     }
 }

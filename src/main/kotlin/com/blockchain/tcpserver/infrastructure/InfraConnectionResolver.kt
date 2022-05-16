@@ -11,7 +11,7 @@ class InfraConnectionResolver : ConnectionResolver {
     @Autowired
     private lateinit var serverConnectionFactory : AbstractServerConnectionFactory
 
-    override fun getUsersConnected(): String {
-        return String.format("%d connected user(s)", serverConnectionFactory.openConnectionIds.size)
+    override fun getUsersConnected(): Int {
+        return serverConnectionFactory.openConnectionIds.size
     }
 }

@@ -1,29 +1,22 @@
 package com.blockchain.tcpserver.infrastructure
 
-import com.blockchain.tcpserver.application.UnexpectedCommandUseCase
-import com.blockchain.tcpserver.application.WhereCommandUseCase
-import com.blockchain.tcpserver.application.WhoCommandUseCase
-import com.blockchain.tcpserver.application.WhyCommandUseCase
-import com.blockchain.tcpserver.domain.ConnectionResolver
-import com.blockchain.tcpserver.domain.ServerResolver
+import com.blockchain.tcpserver.infrastructure.controller.TelnetWhereCommandController
+import com.blockchain.tcpserver.infrastructure.controller.TelnetWhoCommandController
+import com.blockchain.tcpserver.infrastructure.controller.TelnetWhyCommandController
 import org.springframework.stereotype.Service
 
 @Service
-class UseCaseResolver constructor(connectionResolver: ConnectionResolver, serverResolver: ServerResolver) {
+class UseCaseResolver constructor(val telnetWhoCommandController: TelnetWhoCommandController, val telnetWhereCommandController: TelnetWhereCommandController, val telnetWhyCommandController: TelnetWhyCommandController) {
     enum class ValidCommands {
         WHERE, WHO, WHY
     }
-    private val whereCommandUseCase = WhereCommandUseCase(serverResolver)
-    private val whoCommandUseCase = WhoCommandUseCase(connectionResolver)
-    private val whyCommandUseCase = WhyCommandUseCase()
-    private val unexpectedCommandUseCase = UnexpectedCommandUseCase()
 
     fun process(command: String) : String {
         return when(command) {
-            ValidCommands.WHERE.name -> whereCommandUseCase.process()
-            ValidCommands.WHO.name -> whoCommandUseCase.process()
-            ValidCommands.WHY.name -> whyCommandUseCase.process()
-            else -> unexpectedCommandUseCase.process()
+            ValidCommands.WHERE.name -> telnetWhereCommandController()
+            ValidCommands.WHO.name -> telnetWhoCommandController()
+            ValidCommands.WHY.name -> telnetWhyCommandController()
+            else -> "Unexpected command"
         }
     }
 }

@@ -1,5 +1,5 @@
 package com.blockchain.tcpserver.domain
 
 interface ConnectionResolver {
-    fun getUsersConnected() : String
+    fun getUsersConnected() : Int
 }
