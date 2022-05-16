@@ -53,12 +53,14 @@ We should also try to keep connections short-lived as this will have an impact i
 
 Additionally to the health endpoint, we should have dashboards covering latency, availability, errors and traffic to better assess the health of the system.
 
+Furthermore, we need to set alerts based on agreed thresholds that would prompt us to anticipate to failures in the system
+
 ### Questions to the product/engineering team
 
 - Is it ok that global unique ID is bound to the instance? A restart of the server currently provides a different ID
 - Do we want our solution to be strong consistent or high available? What is the eviction time acceptable in case of A?
 - How long do we want to keep the connections opened?
-
+- How many concurrent users are to be expected?
 
 
 
