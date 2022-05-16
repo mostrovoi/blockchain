@@ -1,4 +1,4 @@
-##Blockchain TCP Server 
+## Blockchain TCP Server 
 
 This sample project is to show how to receive message via TCP by using Spring Boot and Spring Integration. 
 
