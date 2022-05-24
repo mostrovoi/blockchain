@@ -45,9 +45,9 @@ If that is not enough, we could explore to have a service providing such functio
 
 ### Observability
 
-We need to ensure and measure 99.95% SLO availability. We could use prometheus to scrape the health endpoint from the loadbalancer. 
+We need to ensure and measure 99.95% SLO availability. We could use APM to monitor all successful requests being number of successful requests over time 
 
-This health endpoint will comprehend different probes to all backend pool instances (servers and service discovery) 
+We could also include latency, errors and saturation to better finetune but it is best to start simple and align with stakeholders.
 
 We should also try to keep connections short-lived as this will have an impact in the load balancer routing
 
