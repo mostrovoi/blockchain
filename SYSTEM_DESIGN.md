@@ -45,7 +45,7 @@ If that is not enough, we could explore to have a service providing such functio
 
 ### Observability
 
-We need to ensure and measure 99.95% SLO availability. We could use APM to monitor all successful requests being number of successful requests over time 
+We need to ensure and measure 99.95% SLO availability. We could use APM to monitor all successful requests being number of successful requests over time and additionally to scrape the health endpoint of the loadbalancer that checks the backend pool (service discovery health endpoint and server health endpoint)
 
 We could also include latency, errors and saturation to better finetune but it is best to start simple and align with stakeholders.
 
