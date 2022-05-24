@@ -60,6 +60,7 @@ Furthermore, we need to set alerts based on agreed thresholds that would prompt 
 - Is it ok that global unique ID is bound to the instance? A restart of the server currently provides a different ID
 - Do we want our solution to be strong consistent or high available? What is the eviction time acceptable in case of A?
 - How long do we want to keep the connections opened?
+- What is an accepted SLO? latency, errors, availability, saturation, aggregation of some?
 - How many concurrent users are to be expected?
 
 
